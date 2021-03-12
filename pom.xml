@@ -84,6 +84,20 @@
             </exclusions>
         </dependency>
 
+        <!-- Adding dependency for caching -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.ecahe</groupId>
+            <artifactId>ehcache</artifactId>
+        </dependency>
+
         <!-- Adding mapstruct dependency -->
         <dependency>
             <groupId>org.mapstruct</groupId>

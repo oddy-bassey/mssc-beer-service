@@ -8,6 +8,8 @@ import com.revoltcode.msscbeerservice.web.model.BeerDto;
 import com.revoltcode.msscbeerservice.web.model.BeerStyleEnum;
 import com.revoltcode.msscbeerservice.web.model.BeerPagedList;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,7 @@ import org.springframework.util.StringUtils;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class BeerServiceImpl implements BeerService {
@@ -23,8 +26,12 @@ public class BeerServiceImpl implements BeerService {
     private final BeerRepository beerRepository;
     private final BeerMapper beerMapper;
 
+    //here spring automatically generates a key based on the multiple parameters in the method call
+    @Cacheable(cacheNames = "beerListCache", condition = "#showInventoryOnhand == false ")
     @Override
     public BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest pageRequest, Boolean showInventoryOnhand) {
+
+        log.info("I was called");
 
         BeerPagedList beerPagedList;
         Page<Beer> beerPage;
@@ -66,8 +73,13 @@ public class BeerServiceImpl implements BeerService {
         return beerPagedList;
     }
 
+    //here spring uses the beerId as the key for the cache
+    @Cacheable(cacheNames = "beerListCache", key = "#beerId", condition = "#showInventoryOnhand == false ")
     @Override
     public BeerDto getById(UUID beerId, Boolean showInventoryOnhand) {
+
+        log.info("I was called");
+
         if(showInventoryOnhand) {
             return beerMapper.beerToBeerDtoWithInventory(beerRepository.findById(beerId).orElseThrow(() -> new NotFoundException()));
         } else{
