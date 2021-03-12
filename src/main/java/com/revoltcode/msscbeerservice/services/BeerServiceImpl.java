@@ -74,7 +74,7 @@ public class BeerServiceImpl implements BeerService {
     }
 
     //here spring uses the beerId as the key for the cache
-    @Cacheable(cacheNames = "beerListCache", key = "#beerId", condition = "#showInventoryOnhand == false ")
+    @Cacheable(cacheNames = "beerCache", key = "#beerId", condition = "#showInventoryOnhand == false ")
     @Override
     public BeerDto getById(UUID beerId, Boolean showInventoryOnhand) {
 
@@ -85,6 +85,15 @@ public class BeerServiceImpl implements BeerService {
         } else{
             return beerMapper.beerToBeerDto(beerRepository.findById(beerId).orElseThrow(() -> new NotFoundException()));
         }
+    }
+
+    @Cacheable(cacheNames = "beerUpcCache", key = "#upc", condition = "#showInventoryOnhand == false ")
+    @Override
+    public BeerDto getByUpc(String upc) {
+
+        log.info("I was called");
+
+        return beerMapper.beerToBeerDto(beerRepository.findByUpc(upc));
     }
 
     @Override
