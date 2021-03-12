@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revoltcode.msscbeerservice.bootstrap.BeerLoader;
 import com.revoltcode.msscbeerservice.web.model.BeerDto;
 import com.revoltcode.msscbeerservice.web.model.BeerStyleEnum;
-import com.revoltcode.msscbeerservice.web.services.BeerService;
+import com.revoltcode.msscbeerservice.services.BeerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
