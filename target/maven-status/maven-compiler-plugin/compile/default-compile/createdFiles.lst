@@ -1,3 +1,4 @@
+com/revoltcode/msscbeerservice/config/CacheConfig.class
 com/revoltcode/msscbeerservice/inventory/model/BeerInventoryDto.class
 com/revoltcode/msscbeerservice/services/BeerInventoryServiceRestTemplateImpl$1.class
 com/revoltcode/msscbeerservice/domain/Beer.class

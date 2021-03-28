@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.revoltcode.msscbeerservice.MsscBeerServiceApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 64.169 s - in com.revoltcode.msscbeerservice.MsscBeerServiceApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.567 s - in com.revoltcode.msscbeerservice.MsscBeerServiceApplicationTests
