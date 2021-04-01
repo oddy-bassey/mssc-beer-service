@@ -3,12 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.revoltcode</groupId>
-        <artifactId>mssc-brewery-bom</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>com.github.sfg-beer-works</groupId>
+        <artifactId>sfg-brewery-bom</artifactId>
+        <version>1.0.3</version>
     </parent>
 
-    <groupId>com.revoltcode</groupId>
     <artifactId>mssc-beer-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>mssc-beer-service</name>
@@ -23,14 +22,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
+            <version>2.3.9.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>javax.cache</groupId>
             <artifactId>cache-api</artifactId>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
-            <groupId>org.ecahe</groupId>
+            <groupId>org.ehcache</groupId>
             <artifactId>ehcache</artifactId>
+            <version>3.9.1</version>
         </dependency>
 
         <!-- Adding plugin to enable mapstruct property binding -->
