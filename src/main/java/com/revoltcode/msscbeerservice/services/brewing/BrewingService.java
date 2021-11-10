@@ -1,9 +1,10 @@
-package com.revoltcode.msscbeerservice.services;
+package com.revoltcode.msscbeerservice.services.brewing;
 
 import com.revoltcode.msscbeerservice.config.JmsConfig;
 import com.revoltcode.msscbeerservice.domain.Beer;
 import com.revoltcode.msscbeerservice.events.BrewBeerEvent;
 import com.revoltcode.msscbeerservice.repositories.BeerRepository;
+import com.revoltcode.msscbeerservice.services.BeerInventoryService;
 import com.revoltcode.msscbeerservice.web.mappers.BeerMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
